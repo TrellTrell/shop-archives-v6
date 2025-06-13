@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_blank">
+    <title>Loading... | Shop Archives</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta content="Shop Archives" property="og:title" />
+    <meta content="Your one stop place for all Discord Collectibles" property="og:description" />
+    <meta content="https://yapper.shop/" property="og:url" />
+    <meta content="https://cdn.yapper.shop/assets/172.png" property="og:image" />
+    <meta content="#B9E87A" data-react-helmet="true" name="theme-color" />
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div style="z-index: 99999; position: absolute; right: 10px; background-color: #7e2f2fd3; border-radius: 10px; padding: 10px; text-align: center; cursor: pointer;" onclick="this.remove()">
+        <h3>This version of Shop Archives relies on API v2, which is considered a legacy version. Please be aware that:</h3>
+        <p>API v2 is no longer actively maintained and may not receive bug fixes or security updates.</p>
+        <p>The API provider may deprecate or disable v2 access without notice, which could cause partial or complete functionality loss in this version.</p>
+        <p>Continued use is at your own risk, and we recommend switching to a newer version that supports API v3.</p>
+        <p>Click this popup to hide it.</p>
+    </div>
+    <div class="housing">
+        <div class="sidebar">
+            <div class="dm-list">
+                <div style="height: 100%;" id="clickable-side-tabs-container">
+                </div>
+            </div>
+            <div class="server-list">
+                <div class="server-avatar">
+                    <button class="server-icon server-icon-selected server-home" id="activate-dev-mode-button">
+                    </button>
+                    <div class="server-pill">
+                    </div>
+                </div>
+                <hr style="border-color: var(--background-tertiary); width: 40px;">
+                <div data-servers>
+                    <div class="server-avatar blog-server" onclick="window.open('https://discord.gg/SVKQEYeTsN');" data-servers-button title="Official Discord Server" bis_skin_checked="1">
+                        <img class="server-icon" src="https://cdn.yapper.shop/assets/182.png">
+                    </div>
+                </div>
+            </div>
+            <div style="width: 320px;">
+            </div>
+        </div>
+        <div class="top-bar" id="top-bar-container">
+            <h2 style="margin-left: 260px; margin-top: 10px;">Loading...</h2>
+            <div id="open-help-modals-buttons-holder"></div>
+        </div>
+        <div class="home-housing" id="everything-housing-container">
+        </div>
+    </div>
+    <div class="modal-housing" id="modal-housing"></div>
+    <div class="options-sidebar-container" id="options-sidebar-container">
+    </div>
+
+    
+    <script src="/assets/10.js"></script>
+    <script src="/assets/23.js"></script>
+    <script src="/assets/19.js"></script>
+    <script>
+        if (localStorage.full_client_rework === "false") {
+            location.href='/home';
+        } else {
+            let clickCount = 0;
+
+            document.getElementById("activate-dev-mode-button").addEventListener("click", function() {
+                clickCount++;
+
+                if (clickCount === 8) {
+                    if (localStorage.dev === "true") {
+                        turnOffDevMode();
+                    } else {
+                        dev();
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
